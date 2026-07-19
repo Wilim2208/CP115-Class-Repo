@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="lab-4-6"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-13 09:33:01 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0xMzswOToxMzowNSBBTTsyNzM5"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0xMzswOTozMzowMSBBTTsxOzI4NDU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="concertTicket" type="Integer" array="False" size=""/>
+            <assign variable="concertTicket" expression="80"/>
+            <declare name="minuteBefore" type="Real" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="output" type="String" array="False" size=""/>
+            <declare name="membership" type="Boolean" array="False" size=""/>
+            <declare name="finalPrice" type="Real" array="False" size=""/>
+            <input variable="minuteBefore"/>
+            <input variable="membership"/>
+            <if expression="minuteBefore &gt; 30">
+                <then>
+                    <assign variable="price" expression="concertTicket - 15"/>
+                </then>
+                <else>
+                    <if expression="minuteBefore &gt; 0">
+                        <then>
+                            <assign variable="output" expression="&quot;EntryDeny&quot;"/>
+                        </then>
+                        <else>
+                            <assign variable="price" expression="concertTicket"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="membership">
+                <then>
+                    <assign variable="finalPrice" expression="price-(price*0.15)"/>
+                </then>
+                <else>
+                    <assign variable="finalPrice" expression="price"/>
+                </else>
+            </if>
+            <output expression="finalPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
