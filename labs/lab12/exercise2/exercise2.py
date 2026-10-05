@@ -1,5 +1,6 @@
 number = 1
-while number <= 100:
+while number < 101:
+    number += 1
     if (number % 7 == 0) and (number % 13 == 0):
         found_number = number
         break   
